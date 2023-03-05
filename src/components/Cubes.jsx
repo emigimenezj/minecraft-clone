@@ -1,9 +1,9 @@
-import { useStore } from '../hooks/useStore';
+import { useGameContext } from '../hooks/useGameContext';
 import { Cube } from './Cube';
 
 
 export function Cubes() {
-  const [cubes] = useStore(state => [state.cubes]);
+  const [cubes] = useGameContext(state => [state.cubes]);
 
   return cubes.map(({ id, pos, texture}) => {
     return (
