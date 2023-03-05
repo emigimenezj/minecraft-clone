@@ -18,6 +18,7 @@ function App() {
           <Ground />
         </Physics>
       </Canvas>
+      <div className="pointer">+</div>
     </>
   );
 }
