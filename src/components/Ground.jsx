@@ -1,4 +1,5 @@
 import { usePlane } from '@react-three/cannon';
+import { useGameContext } from '../hooks/useGameContext';
 import { groundTexture } from '../images/textures';
 
 export function Ground() {
@@ -9,8 +10,19 @@ export function Ground() {
 
   groundTexture.repeat.set(100, 100);
 
+  const [addCube] = useGameContext(state => [state.addCube]);
+
+  const handleClickGround = event => {
+    event.stopPropagation();
+    const [x, y, z] = Object.values(event.point)
+      .map(n => Math.ceil(n));
+
+    addCube(x, y, z);
+  }
+
   return (
     <mesh
+      onClick={handleClickGround}
       ref={ref}
     >
       <planeGeometry attach='geometry' args={[100, 100]} />
