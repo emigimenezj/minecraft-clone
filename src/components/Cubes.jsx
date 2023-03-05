@@ -9,6 +9,7 @@ export function Cubes() {
     return (
       <Cube
         key={id}
+        id={id}
         position={pos}
         texture={texture}
       />
