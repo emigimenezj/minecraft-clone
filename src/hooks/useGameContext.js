@@ -1,7 +1,6 @@
 import { nanoid } from 'nanoid';
 import { create } from 'zustand';
 
-
 export const useGameContext = create(set => ({
   texture: 'dirt',
   cubes: [{

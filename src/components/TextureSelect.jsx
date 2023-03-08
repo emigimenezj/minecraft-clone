@@ -1,7 +1,9 @@
-import * as images from '../images/images.js'
-import { useKeyboard } from '../hooks/useKeyboard.js'
-import { useEffect, useState } from 'react'
-import { useGameContext } from '../hooks/useGameContext.js'
+import { useEffect, useState } from 'react';
+
+import { useKeyboard } from '../hooks/useKeyboard';
+import { useGameContext } from '../hooks/useGameContext';
+
+import * as images from '../images/images';
 
 export const TextureSelector = () => {
   const [visible, setVisible] = useState(true);
