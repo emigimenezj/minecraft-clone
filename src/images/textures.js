@@ -1,36 +1,36 @@
 import {
-  grassImg,
   dirtImg,
-  logImg,
   glassImg,
+  grassImg,
+  logImg,
   woodImg
-} from './images.js'
+} from './images';
 
-import { NearestFilter, RepeatWrapping, TextureLoader } from 'three'
+import { NearestFilter, RepeatWrapping, TextureLoader } from 'three';
 
-const grassTexture = new TextureLoader().load(grassImg)
-const dirtTexture = new TextureLoader().load(dirtImg)
-const logTexture = new TextureLoader().load(logImg)
-const glassTexture = new TextureLoader().load(glassImg)
-const woodTexture = new TextureLoader().load(woodImg)
+const dirt = new TextureLoader().load(dirtImg);
+const glass = new TextureLoader().load(glassImg);
+const grass = new TextureLoader().load(grassImg);
+const log = new TextureLoader().load(logImg);
+const wood = new TextureLoader().load(woodImg);
 
-const groundTexture = new TextureLoader().load(grassImg)
+const ground = new TextureLoader().load(grassImg);
 
-groundTexture.wrapS = RepeatWrapping
-groundTexture.wrapT = RepeatWrapping
+ground.wrapS = RepeatWrapping;
+ground.wrapT = RepeatWrapping;
+ground.magFilter = NearestFilter;
 
-groundTexture.magFilter = NearestFilter
-grassTexture.magFilter = NearestFilter
-dirtTexture.magFilter = NearestFilter
-logTexture.magFilter = NearestFilter
-glassTexture.magFilter = NearestFilter
-woodTexture.magFilter = NearestFilter
+dirt.magFilter = NearestFilter;
+glass.magFilter = NearestFilter;
+grass.magFilter = NearestFilter;
+log.magFilter = NearestFilter;
+wood.magFilter = NearestFilter;
 
 export {
-  groundTexture,
-  grassTexture,
-  dirtTexture,
-  logTexture,
-  glassTexture,
-  woodTexture
+  ground,
+  grass,
+  dirt,
+  log,
+  glass,
+  wood
 }

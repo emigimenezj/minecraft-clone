@@ -1,18 +1,15 @@
 import { useBox } from '@react-three/cannon';
 import { useState } from 'react';
+
 import { useGameContext } from '../hooks/useGameContext';
+
 import * as textures from '../images/textures';
 
 export function Cube({ id, position, texture }) {
   const [isHovered, setIsHovered] = useState(false);
   const [removeCube] = useGameContext(state => [state.removeCube]);
 
-  const [ref] = useBox(() => ({
-    type: 'Static',
-    position
-  }));
-
-  const activeTexture = textures[texture + 'Texture']
+  const [ref] = useBox(() => ({ type: 'Static', position }));
 
   return (
     <mesh
@@ -25,7 +22,7 @@ export function Cube({ id, position, texture }) {
       <meshStandardMaterial
         color={isHovered ? 'grey' : 'white'}
         transparent
-        map={activeTexture}
+        map={textures[texture]}
         attach='material'
       />
     </mesh>
