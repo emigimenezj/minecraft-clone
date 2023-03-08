@@ -17,7 +17,7 @@ export function Ground() {
     const [x, _, z] = Object.values(event.point)
       .map(n => Math.round(n));
 
-    addCube(x, 0, z);
+    addCube([x, 0, z]);
   }
 
   return (

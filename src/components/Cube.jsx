@@ -5,7 +5,7 @@ import { useGameContext } from '../hooks/useGameContext';
 
 import * as textures from '../images/textures';
 
-export function Cube({ id, position, texture }) {
+export function Cube({ position, texture }) {
   const [isHovered, setIsHovered] = useState(false);
   const [addCube, removeCube] = useGameContext(state => [state.addCube, state.removeCube]);
 
@@ -13,12 +13,13 @@ export function Cube({ id, position, texture }) {
 
   const handleClick = event => {
     event.stopPropagation();
-    if (event.altKey) return removeCube(id);
+    if (event.altKey) return removeCube(position);
+
     const [target] = event.intersections;
     const {x, y, z} = target.face.normal;
     const [X, Y, Z] = position;
 
-    addCube(x+X, y+Y, z+Z);
+    addCube([x+X, y+Y, z+Z]);
   }
 
   return (
