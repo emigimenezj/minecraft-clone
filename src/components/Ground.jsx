@@ -14,10 +14,10 @@ export function Ground() {
 
   const handleClickGround = event => {
     event.stopPropagation();
-    const [x, y, z] = Object.values(event.point)
-      .map(n => Math.ceil(n));
+    const [x, _, z] = Object.values(event.point)
+      .map(n => Math.round(n));
 
-    addCube(x, y, z);
+    addCube(x, 0, z);
   }
 
   return (
