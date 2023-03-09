@@ -21,20 +21,15 @@ export const useGameContext = create(update => ({
     }),
   addCube: pos => {
     const key = pos.toString();
-    update(({cubes, texture}) => {
-      if (cubes.has(key)) return {};
-      return {
-        cubes: cubes.set(key, {id: nanoid(), pos, texture})
-      }
-    });
+    update( ({cubes, texture}) => cubes.has(key) ? {} : cubes.set(key, {id: nanoid(), pos, texture}) );
   },
   removeCube: pos => {
     const key = pos.toString();
-    update( ({cubes}) => ({cubes: (cubes.delete(key), cubes)}) );
+    update( ({cubes}) => (cubes.delete(key), cubes) );
   },
   setTexture: texture => {
-    update(() => ({ texture }));
+    update( _ => ({texture}) );
   },
   saveWorld: () => {},
-  resetWorld: () => {},
+  resetWorld: _ => cubes.clear(),
 }));
