@@ -30,6 +30,6 @@ export const useGameContext = create(update => ({
   setTexture: texture => {
     update( _ => ({texture}) );
   },
-  saveWorld: () => {},
-  resetWorld: _ => cubes.clear(),
+  saveWorld: _ => {},
+  resetWorld: _ => update( ({cubes}) => (cubes.clear(), cubes) ),
 }));

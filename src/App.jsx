@@ -6,6 +6,7 @@ import { FPV as Fpv } from './components/FPV';
 import { Ground } from './components/Ground';
 import { Player } from './components/Player';
 import { HotkeyBar } from './components/HotkeyBar';
+import { Menu } from './components/Menu';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         </Physics>
       </Canvas>
       <HotkeyBar />
+      <Menu />
       <div className="pointer">+</div>
     </>
   );
