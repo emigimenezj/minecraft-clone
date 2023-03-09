@@ -13,7 +13,7 @@ export function Cube({ position, texture }) {
 
   const handleClick = event => {
     event.stopPropagation();
-    if (event.altKey) return removeCube(position);
+    if (event.shiftKey) return removeCube(position);
 
     const [target] = event.intersections;
     const {x, y, z} = target.face.normal;
