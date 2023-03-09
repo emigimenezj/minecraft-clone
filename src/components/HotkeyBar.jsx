@@ -5,7 +5,7 @@ import { useGameContext } from '../hooks/useGameContext';
 
 import * as images from '../images/images';
 
-export const TextureSelector = () => {
+export const HotkeyBar = () => {
   const [visible, setVisible] = useState(true);
   const [texture, setTexture] = useGameContext(state => [state.texture, state.setTexture]);
 

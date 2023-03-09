@@ -5,7 +5,7 @@ import { Cubes } from './components/Cubes';
 import { FPV as Fpv } from './components/FPV';
 import { Ground } from './components/Ground';
 import { Player } from './components/Player';
-import { TextureSelector } from './components/TextureSelect';
+import { HotkeyBar } from './components/HotkeyBar';
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
           <Ground />
         </Physics>
       </Canvas>
-      <TextureSelector />
+      <HotkeyBar />
       <div className="pointer">+</div>
     </>
   );
